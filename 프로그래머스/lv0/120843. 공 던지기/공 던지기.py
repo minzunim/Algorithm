@@ -2,10 +2,7 @@ def solution(numbers, k):
     answer = 0
     if len(numbers) < 2 * k:
         numbers = numbers * k
-        answer = numbers[2 * (k - 1)]
-    else:
-        answer = numbers[2 * (k - 1)]
-    return answer
+    return numbers[2 * (k - 1)]
 
 # 123456123456
 # 123123
