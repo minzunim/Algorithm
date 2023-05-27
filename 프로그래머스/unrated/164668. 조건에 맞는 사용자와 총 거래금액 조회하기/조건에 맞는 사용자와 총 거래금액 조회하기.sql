@@ -1,0 +1,18 @@
+-- 완료된 중고 거래의 총금액이 70만 원 이상인 사람의 회원 ID, 닉네임, 총거래금액
+-- USER_ID로 그룹핑하고 HAVING 합계 계산해서 70만원 이상
+SELECT U.USER_ID, U.NICKNAME, SUM(B.PRICE) AS TOTAL_SALES
+FROM 
+    USED_GOODS_BOARD B
+JOIN 
+    USED_GOODS_USER U
+ON 
+    B.WRITER_ID = U.USER_ID
+WHERE 
+    B.STATUS = 'DONE'
+GROUP BY
+    U.USER_ID
+HAVING
+    SUM(B.PRICE) >= 700000
+ORDER BY
+    TOTAL_SALES
+-- STATUS DONE
