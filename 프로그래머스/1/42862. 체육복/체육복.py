@@ -1,7 +1,7 @@
 def solution(n, lost, reserve):
     # 중복 제거
-    real_lost = sorted(list(set(lost) - set(reserve)))
-    real_reserve = sorted(list(set(reserve) - set(lost)))
+    real_lost = list(set(lost) - set(reserve))
+    real_reserve = list(set(reserve) - set(lost))
 
     for r in real_reserve:
         if r - 1 in real_lost:
