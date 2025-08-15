@@ -1,15 +1,18 @@
 def solution(s):
     stack = []
+    flag = False
     
     for char in s:
-        if char == "(":
+        if char == '(':
             stack.append(char)
         else:
-            if len(stack) != 0:
-                stack.pop()
-            else:
+            if not stack:
                 return False
-    if len(stack) != 0:
-        return False
-    else:
-        return True
+            stack.pop()
+    if len(stack) == 0:
+        flag = True
+    return flag
+
+print(solution(")"))
+        
+            
