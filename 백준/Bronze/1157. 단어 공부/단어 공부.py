@@ -1,10 +1,9 @@
 from collections import Counter
 
-word = input().upper()
-count_dict = Counter(word)
+word_dict = Counter(input().upper())
+max_count = max(word_dict.values())
+max_chars = [ char for char, count in word_dict.items() if count == max_count ]
+print('?' if len(max_chars) > 1 else max_chars[0])
 
-max_value = max(count_dict.values())
-max_keys = [ char for char, count in count_dict.items() if count == max_value ]
 
-print('?' if len(max_keys) > 1 else max_keys[0])
         
