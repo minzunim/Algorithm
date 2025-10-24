@@ -5,15 +5,7 @@ count = 0
 
 for _ in range(n):
     word = input()
-    prev, cur = '', ''
-    list = []
-
-    for char in word:
-        cur = char
-        if prev != cur:
-            list.append(char)
-        prev = cur
-
+    list = [ word[i] for i in range(len(word)) if i == 0 or word[i] != word[i - 1] ]
     count_dict = Counter(list)
     if max(count_dict.values()) == 1:
         count += 1
