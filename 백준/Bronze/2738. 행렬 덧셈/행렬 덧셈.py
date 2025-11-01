@@ -1,8 +1,12 @@
 n, m = map(int, input().split())
-A = [ map(int, input().split()) for _ in range(n)]
-B = [ map(int, input().split()) for _ in range(n)]
 
-total = [[ x + y for x, y in zip(row_a, row_b)] for row_a, row_b in zip(A, B)]
+# [[1,1,1], [2,2,2], [3,3,3]]
 
-for matrix in total:
-    print(*matrix)
+a = [ list(map(int, input().split())) for _ in range(n)]
+b = [ list(map(int, input().split())) for _ in range(n)]
+
+for _a, _b in zip(a, b):
+    row = ""
+    for __a, __b in zip(_a, _b):
+        row += str(__a + __b) + " "
+    print(row)
